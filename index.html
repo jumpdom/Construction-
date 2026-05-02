@@ -1,62 +1,102 @@
-<!-- Modern Navbar Component -->
-<nav class="bg-slate-900 border-b border-sky-500/30 px-6 py-4 flex items-center justify-between">
-  <!-- Brand Logo -->
-  <div class="text-sky-400 font-bold text-2xl tracking-wider">
-    CONSTRUCT-X <span class="text-white">PRO</span>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construct-X Pro | Smart Site Utility</title>
+    <!-- Tailwind CSS for Modern Design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #020617; } /* Deep Slate Black */
+    </style>
+</head>
+<body class="text-slate-200">
 
-  <!-- Navigation Links -->
-  <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-    <a href="#" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-      🏠 <span>HOME</span>
-    </a>
-    <a href="#" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-      📊 <span>CALCULATORS</span>
-    </a>
-    <a href="#" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-      📄 <span>IMAGE TO EXCEL</span>
-    </a>
-    <a href="#" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-      🔗 <span>LINKS</span>
-    </a>
-  </div>
+    <!-- 1. MODERN NAVBAR -->
+    <nav class="bg-slate-900 border-b border-sky-500/30 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+        <div class="text-sky-400 font-bold text-2xl tracking-wider cursor-pointer" onclick="showSection('home')">
+            CONSTRUCT-X <span class="text-white">PRO</span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <button onclick="showSection('home')" class="hover:text-sky-400 transition-colors flex items-center gap-2">🏠 HOME</button>
+            <button onclick="showSection('upload')" class="hover:text-sky-400 transition-colors flex items-center gap-2">📄 IMAGE TO EXCEL</button>
+            <button class="hover:text-sky-400 transition-colors flex items-center gap-2">📊 CALCULATORS</button>
+            <button class="hover:text-sky-400 transition-colors flex items-center gap-2">🔗 LINKS</button>
+        </div>
+        <button class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg shadow-sky-900/20">❓ HELP</button>
+    </nav>
 
-  <!-- Help Button -->
-  <button class="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all">
-    ❓ HELP
-  </button>
-</<main class="bg-slate-950 min-h-screen p-8">
-  <div class="max-w-6xl mx-auto">
-    <h1 class="text-3xl font-bold text-white mb-8">Welcome, Amit! 👋</h1>
-    
-    <!-- Feature Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <!-- Card 1: Image to Excel -->
-      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/50 transition-all cursor-pointer group">
-        <div class="text-4xl mb-4">📄</div>
-        <h3 class="text-xl font-bold text-sky-400 mb-2">Image to Excel</h3>
-        <p class="text-slate-400 text-sm">Site logs aur receipts ko turant Excel sheet mein badlein[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).</p>
-        <div class="mt-4 text-sky-500 font-semibold group-hover:translate-x-2 transition-transform">Start Converting →</div>
-      </div>
+    <!-- 2. HOME / DASHBOARD SECTION -->
+    <main id="home-section" class="p-8">
+        <div class="max-w-6xl mx-auto">
+            <header class="mb-10">
+                <h1 class="text-4xl font-extrabold text-white mb-2">Construction Hub</h1>
+                <p class="text-slate-400">Namaste Amit! Apne site ka kaam smart tarike se manage karein[span_1](start_span)[span_1](end_span).</p>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Image to Excel Card -->
+                <div onclick="showSection('upload')" class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-sky-500/50 transition-all cursor-pointer group shadow-xl">
+                    <div class="text-5xl mb-6">📄</div>
+                    <h3 class="text-2xl font-bold text-sky-400 mb-3">Image to Excel</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Handwritten logs aur material receipts ko turant digital Excel sheet mein convert karein[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span).</p>
+                    <div class="mt-6 text-sky-500 font-bold group-hover:translate-x-2 transition-transform">Open Tool →</div>
+                </div>
 
-      <!-- Card 2: Construction Calc -->
-      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/50 transition-all cursor-pointer group">
-        <div class="text-4xl mb-4">🏗️</div>
-        <h3 class="text-xl font-bold text-sky-400 mb-2">Calculators</h3>
-        <p class="text-slate-400 text-sm">Concrete, Steel aur Brick work ki sateek calculation karein[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span).</p>
-        <div class="mt-4 text-sky-500 font-semibold group-hover:translate-x-2 transition-transform">Calculate Now →</div>
-      </div>
+                <!-- Calculator Card -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-sky-500/50 transition-all cursor-pointer group shadow-xl">
+                    <div class="text-5xl mb-6">🏗️</div>
+                    <h3 class="text-2xl font-bold text-sky-400 mb-3">Calculators</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Slab, Beam, aur Steel Weight ki sateek calculation site par hi karein[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).</p>
+                    <div class="mt-6 text-sky-500 font-bold group-hover:translate-x-2 transition-transform">Coming Soon →</div>
+                </div>
 
-      <!-- Card 3: Material History -->
-      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/50 transition-all cursor-pointer group">
-        <div class="text-4xl mb-4">🕒</div>
-        <h3 class="text-xl font-bold text-sky-400 mb-2">Recent Logs</h3>
-        <p class="text-slate-400 text-sm">Apne purane records aur calculation history dekhein[span_8](start_span)[span_8](end_span).</p>
-        <div class="mt-4 text-sky-500 font-semibold group-hover:translate-x-2 transition-transform">View History →</div>
-      </div>
+                <!-- Quick Help Card -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-sky-500/50 transition-all cursor-pointer group shadow-xl">
+                    <div class="text-5xl mb-6">💡</div>
+                    <h3 class="text-2xl font-bold text-sky-400 mb-3">Help Center</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Website ko use karne ke video tutorials aur support ke liye yahan dekhein[span_6](start_span)[span_6](end_span).</p>
+                    <div class="mt-6 text-sky-500 font-bold group-hover:translate-x-2 transition-transform">Get Help →</div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    </div>
-  </div>
-</main>
+    <!-- 3. UPLOAD SECTION (Initialy Hidden) -->
+    <section id="upload-section" class="hidden p-8 animate-in fade-in duration-500">
+        <div class="max-w-4xl mx-auto">
+            <button onclick="showSection('home')" class="text-sky-400 mb-8 flex items-center gap-2 font-bold hover:text-sky-300">
+                ← Back to Dashboard
+            </button>
 
+            <div class="bg-slate-900 border-2 border-dashed border-slate-700 rounded-[2rem] p-16 text-center hover:border-sky-500/40 transition-all bg-gradient-to-b from-slate-900 to-slate-950">
+                <div class="bg-sky-500/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+                    <span class="text-5xl">📤</span>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-4">Upload Site Log</h2>
+                <p class="text-slate-400 mb-10 max-w-md mx-auto text-lg">Photo upload karein aur hum use automatic Excel table mein badal denge[span_7](start_span)[span_7](end_span).</p>
+
+                <label class="bg-sky-600 hover:bg-sky-500 text-white px-10 py-4 rounded-2xl font-black cursor-pointer transition-all inline-block shadow-lg shadow-sky-600/20 active:scale-95">
+                    SELECT FILE FROM PHONE
+                    <input type="file" class="hidden" accept="image/*" onchange="previewFile(this)"/>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT FOR PAGE NAVIGATION -->
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('home-section').classList.add('hidden');
+            document.getElementById('upload-section').classList.add('hidden');
+            
+            document.getElementById(sectionId + '-section').classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+
+        function previewFile(input) {
+            alert("File Selected! Agle step mein hum iska backend integration karenge[span_8](start_span)[span_8](end_span).");
+        }
+    </script>
+</body>
+</html>
